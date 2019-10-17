@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,55 +8,94 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="public/css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    <img class="hero" style="margin-top: -200px" src="public/img/cherry-tree-1225186.jpg">
-    <div class="container">
-        <div id="namebar" class="mt-4">
-            <img src="public/img/Profile.png" alt="" class="profile float-left">
 
-            <div class="d-inline-block m-3 ml-5">
+<body>
+    <nav class="navbar z-2">
+        <div class="logo-container">
+            <img src="public/img/Logo Alt.svg" class="logo-alt" alt="">
+            <img src="public/img/Logo.svg" class="logo" alt="">
+        </div>
+    </nav>
+
+    <img class="hero" style="margin-top: -200px" src="public/img/cherry-tree-1225186.jpg">
+
+    <div class="container">
+        <div id="namebar" class="mt-4 d-flex">
+            <img src="public/img/Profile.png" alt="" class="profile mr-3">
+
+            <div class="d-inline-block m-3">
                 <h3 class="s-upper">Malte Klüft</h2>
-                <h5 class="w-light"><i>Web developer, stand user, and design enthusiast.</i></h5>
+                    <h5 class="w-light"><i>Web developer, stand user, and design enthusiast.</i></h5>
             </div>
         </div>
 
-        <hr class="mt-5 opacity-0">
+        <hr class="divider">
 
-        <div id="capabilities" class="mt-5">
-            <h4 class="w-regular">Capabilities</h4>
-            <div class="col-10">
-                <div class="capability-item m-3">
+        <div id="capabilities">
+            <h4 class="w-regular mb-3">Capabilities</h4>
+            <div class="">
+                <div class="capability-item">
                     <img src="public/img/Jquery.svg" alt="">
                     <p class="item-name">jQuery</p>
                 </div>
-                <div class="capability-item m-3">
+                <div class="capability-item">
                     <img src="public/img/Vue.js.svg" alt="">
                     <p class="item-name">Vue.js</p>
                 </div>
-                <div class="capability-item m-3">
+                <div class="capability-item">
                     <img src="public/img/HTML5.svg" alt="">
                     <p class="item-name">HTML5</p>
                 </div>
-                <div class="capability-item m-3">
+                <div class="capability-item">
                     <img src="public/img/CSS3.svg" alt="">
                     <p class="item-name">CSS3</p>
                 </div>
-                <div class="capability-item m-3">
+                <div class="capability-item">
                     <img src="public/img/JS.svg" alt="">
                     <p class="item-name">JavaScript</p>
                 </div>
-                <div class="capability-item m-3">
+                <div class="capability-item">
                     <img src="public/img/Illustrator.svg" alt="">
                     <p class="item-name">Illustrator</p>
                 </div>
-                <div class="capability-item m-3">
+                <div class="capability-item">
                     <img src="public/img/Adobe XD.svg" alt="">
                     <p class="item-name">Adobe XD</p>
                 </div>
             </div>
         </div>
+
+        <hr class="divider">
+
+        <div id="portfolio">
+            <h4 class="w-regular mb-3">Portfolio</h4>
+
+            <div class="card raised-4">
+                <h5 class="card-header w-regular">Item 1</h5>
+                <img src="public/img/abstract-2468874_1280.jpg" alt="" class="card-image">
+                <div class="card-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At
+                    </p>
+                    <a class="btn mt-3 w-semibold">Go</a>
+                </div>
+            </div>
+            <div class="card raised-4">
+                <h5 class="card-header w-regular">Item 2</h5>
+                <img src="public/img/abstract-2468874_1280.jpg" alt="" class="card-image">
+            </div>
+            <div class="card raised-4">
+                <h5 class="card-header w-regular">Item 3</h5>
+                <img src="public/img/abstract-2468874_1280.jpg" alt="" class="card-image">
+            </div>
+        </div>
     </div>
 </body>
+
 </html>
