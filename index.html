@@ -14,14 +14,64 @@
 </head>
 
 <body>
-    <nav class="navbar z-2">
-        <div class="logo-container">
-            <img src="public/img/Logo Alt.svg" class="logo-alt" alt="">
-            <img src="public/img/Logo.svg" class="logo" alt="">
-        </div>
-    </nav>
+    <script>
+        /*
+         *   Clips the Alt. Logo to be visible at the right points.
+         */
+        window.addEventListener("scroll", clip);
+        window.onload = clip;
 
-    <img class="hero" style="margin-top: -200px" src="public/img/cherry-tree-1225186.jpg">
+        function clip() {
+            let container = document.getElementsByClassName("hero").item(0);
+            let logo = document.getElementsByClassName("nav-default").item(0);
+            let logoAlt = document.getElementsByClassName("nav-alt").item(0);
+
+            let containerOffset = container.getBoundingClientRect();
+            let path = "rect(" + containerOffset.bottom + "px, " + document.body.clientWidth + "px, 100000px, 0px)";
+            let inversePath = "rect(0px, " + document.body.clientWidth + "px, " + containerOffset.bottom + "px, 0px)";
+
+            logo.style["clip"] = path;
+            logoAlt.style["clip"] = inversePath;
+        }
+    </script>
+
+    <div class="navbar-wrapper">
+        <!--nav class="navbar nav-hover z-3">
+            <div class="logo-container">
+                <img src="public/img/Logo.svg" class="logo-overlay z-4" alt="">
+            </div>
+            <div class="navlinks d-flex">
+                <a href="#home" class="d-inline-block">Home</a>
+                <a href="#portfolio" class="d-inline-block">Portfolio</a>
+                <a href="#experience" class="d-inline-block">Experience</a>
+                <a href="#contact" class="d-inline-block">Contact</a>
+            </div>
+        </nav-->
+        <nav class="navbar nav-default z-2">
+            <div class="logo-container">
+                <img src="public/img/Logo.svg" class="logo z-3" alt="">
+            </div>
+            <div class="navlinks d-flex">
+                <a href="#home" class="d-inline-block">Home</a>
+                <a href="#portfolio" class="d-inline-block">Portfolio</a>
+                <a href="#experience" class="d-inline-block">Experience</a>
+                <a href="#contact" class="d-inline-block">Contact</a>
+            </div>
+        </nav>
+        <nav class="navbar nav-alt z-2">
+            <div class="logo-container">
+                <img src="public/img/Logo Alt.svg" class="logo-alt" alt="">
+            </div>
+            <div class="navlinks d-flex">
+                <a href="#home" class="d-inline-block">Home</a>
+                <a href="#portfolio" class="d-inline-block">Portfolio</a>
+                <a href="#experience" class="d-inline-block">Experience</a>
+                <a href="#contact" class="d-inline-block">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <img class="hero" id="home" style="margin-top: -200px" src="public/img/cherry-tree-1225186.jpg">
 
     <div class="container">
         <div id="namebar" class="mt-4 d-flex">
@@ -37,7 +87,7 @@
 
         <div id="capabilities">
             <h4 class="w-regular mb-3">Capabilities</h4>
-            <div class="">
+            <div>
                 <div class="capability-item">
                     <img src="public/img/Jquery.svg" alt="">
                     <p class="item-name">jQuery</p>
@@ -71,31 +121,115 @@
 
         <hr class="divider">
 
-        <div id="portfolio">
+        <div id="portfolio" class="anchor">
             <h4 class="w-regular mb-3">Portfolio</h4>
-
             <div class="card raised-4">
                 <h5 class="card-header w-regular">Item 1</h5>
                 <img src="public/img/abstract-2468874_1280.jpg" alt="" class="card-image">
                 <div class="card-body">
                     <p>
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut
-                        labore et dolore magna aliquyam erat, sed diam voluptua. At
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
                     </p>
-                    <a class="btn mt-3 w-semibold">Go</a>
+                    <a class="btn mt-3 w-semibold">Read More</a>
                 </div>
             </div>
             <div class="card raised-4">
                 <h5 class="card-header w-regular">Item 2</h5>
                 <img src="public/img/abstract-2468874_1280.jpg" alt="" class="card-image">
+                <div class="card-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+                    </p>
+                    <a class="btn mt-3 w-semibold">Read More</a>
+                </div>
             </div>
             <div class="card raised-4">
                 <h5 class="card-header w-regular">Item 3</h5>
                 <img src="public/img/abstract-2468874_1280.jpg" alt="" class="card-image">
+                <div class="card-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt
+                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                        duo
+                        dolores et ea
+                    </p>
+                    <a class="btn mt-3 w-semibold">Read More</a>
+                </div>
             </div>
         </div>
+
+        <hr class="divider">
+
+        <div id="experience" class="anchor">
+            <h4 class="w-regular">Work Experience</h4>
+
+            <div class="panel raised-4">
+                <img src="" alt="" class="panel-icon">
+                <h5 class="panel-name">Framtidsverkstad</h5>
+                <p class="muted panel-employer">Research Institutes of Sweden</p>
+                <p class="panel-body">
+                    I Worked for <a href="https://ri.se" target="_blank">RISE</a> with technical design and future
+                    studies during
+                    a period of 13 days.
+                    ”Spetsen” was developed along a group of 3 other youths as a design plan for new architectural
+                    developments on Norra Ön in Umeå.
+                </p>
+            </div>
+            <div class="panel raised-4">
+                <img src="" alt="" class="panel-icon">
+                <h5 class="panel-name">Internship</h5>
+                <p class="muted panel-employer">Umeå Gator och Torg</p>
+                <p class="panel-body">
+                    Worked for <a href="https://bit.ly/2kzSfoH" target="_blank">Umeå Gator och Torg</a>, an extension of
+                    state-owned
+                    Umeå Kommun, for a duration of 15 days.03ZA9q48w1*2/3
+                    Primarily worked with trash-pickup services and weeding but also with preparations for local events
+                    hosted by Umeå Kommun.
+                </p>
+            </div>
+            <div class="panel raised-4">
+                <img src="" alt="" class="panel-icon">
+                <h5 class="panel-name">Web Design and Development</h5>
+                <p class="muted panel-employer">Freelance</p>
+                <p class="panel-body">
+                    I have worked as a freelancer designing and developing websites for clients, both paid and unpaid.
+                    <br><a href="http://arnemuller.se" target="_blank">http://arnemuller.se</a> (Malte Klüft)
+                    <br><a href="https://imgur.com/a/Pr9wXwG" target="_blank">http://makerspace.umea-ntig.se</a> (Photo
+                    gallery) (Malte Klüft, Elias Renman, Marcus Billman)
+                    <br><a href="https://imgur.com/a/hnbdop2" target="_blank">http://te4.umea-ntig.se</a> (Photo
+                    Gallery) (Malte Klüft, Marcus Billman)
+                </p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div id="contact" class="anchor">
+            <h4 class="w-regular">Contact Me</h4>
+            <form action="mailto:malte.kluft@example.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <p class="placeholder">Name:</p>
+                    <input class="text-input" type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <p class="placeholder">E-mail:</p>
+                    <input class="text-input" type="text" name="mail" required>
+                </div>
+                <div class="form-group">
+                    <p>Message:</p>
+                    <textarea class="text-area" type="text" name="comment"></textarea>
+                </div>
+                <input class="btn w-semibold" type="submit" value="Submit">
+            </form>
+        </div>
     </div>
+    <footer>
+        <div class="container">
+            Made with ❤️ using Pure HTML, CSS and JS
+        </div>
+    </footer>
 </body>
 
 </html>
